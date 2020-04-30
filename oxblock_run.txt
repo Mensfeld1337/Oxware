@@ -1,0 +1,11 @@
+docker run -d \
+    --name oxBlock \
+    -p 5553:53/tcp -p 5553:53/udp \
+    -p 88:80 \
+    -p 8080:443 \
+    -e TZ="America/New_York" \
+    -v "$(pwd)/etc-pihole/:/etc/pihole/" \
+    -v "$(pwd)/etc-dnsmasq.d/:/etc/dnsmasq.d/" \
+    --dns=127.0.0.1 --dns=1.1.1.1 \
+    --restart=unless-stopped \
+    pihole/pihole:latest
