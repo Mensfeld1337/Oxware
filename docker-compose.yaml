@@ -11,8 +11,8 @@ services:
       - CACHE_SLICE_SIZE=4m 
 
     volumes:
-      - /media/oxData:/data/cache # docker volumes für cache daten
-      - /media/oxLogs:/data/logs  # /meida/ox* ist mit ssd/hdd gemounted
+      - /media/oxData/cache:/data/cache # docker volumes für cache daten
+      - /media/oxData/logs:/data/logs  # /meida/ox* ist mit ssd/hdd gemounted
     ports:
       - "80:80"
 
